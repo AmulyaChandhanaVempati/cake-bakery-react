@@ -17,6 +17,7 @@ import BComponent from './BComponent';
 import CComponent from './CComponent';
 import DComponent from './DComponent';
 import Search from './Search';
+import CakeCart from './CakeCart';
 function App() {
   var money = 10000;
   
@@ -34,6 +35,7 @@ function App() {
         <Route path='/signup' element={<SignUp></SignUp>}> </Route>
         <Route path='/cakeDetails/:cakeid' element={<CakeDetails/>}> </Route>
         <Route path='/search' element={<Search/>}></Route>
+        <Route path='/cart' element={<CakeCart/>}></Route>
       </Routes> 
       </BrowserRouter>
 

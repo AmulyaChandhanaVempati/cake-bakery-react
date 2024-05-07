@@ -28,8 +28,8 @@ function Login (){
         }).then((response)=>{
             console.log("Response from the API : ", response)
             if(response.status == 200){
-                navigate("/cakelist");
                 localStorage.token = response.data.token;
+                navigate("/cakelist");
             } else {
                 setError("********No user found*********");
             }

@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import { useSearchParams } from "react-router-dom"
 import axios from "axios";
+import Cake from "./Cake";
+import { Row } from "antd"
 
 function Search(){
     var[query, setQuery] = useSearchParams()
@@ -25,14 +27,17 @@ function Search(){
 
     return(
         <div>
-            <h1>Search Result for {text}</h1>
+            <Row style={{textAlign:"center"}}>
             {
                 searchresult.map((each)=>{
                     return(
-                        <p>{each.cakeid}</p>
+                        <Cake data={each}/>
                     )
                 })
             }
+            </Row>
+            
+
 
         </div>
     )

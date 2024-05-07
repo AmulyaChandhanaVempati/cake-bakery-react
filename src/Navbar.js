@@ -25,13 +25,13 @@ function Navbar(){
         {label: "Contact Us"},
         {label: (<Link to="/login"><Button type="primary">Login</Button></Link>)},
         {label:(
-            <>
-            <input placeholder="search" onChange={handleSearchText}></input>
+            <div>
+            <input placeholder="search" onChange={handleSearchText} style={{textAlign:"center"}}></input>
             <Button type="primary" onClick={handleSearch}>Search</Button>
-            </>
-        )
+            </div>
+        )},
+        {label:(<Link to="/cart"><Button type="primary">Cart</Button></Link>)}
 
-        }
     ]
     return(
         <div>

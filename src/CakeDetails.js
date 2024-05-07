@@ -24,6 +24,26 @@ function CakeDetails(){
             }
         )
     }
+    var cakecartdetails = {
+        cakeid:cakeDetails?.cakeid,
+        name: cakeDetails?.name,
+        price: cakeDetails?.price,
+        image: cakeDetails?.image,
+        weight: cakeDetails?.weight
+    }
+    function handleAddToCart(){
+        axios({
+            url:"http://apibyauw.eu-4.evennode.com/api"+"/addcaketocart",
+            method:"post",
+            data:cakecartdetails, 
+            headers:{Authorization:localStorage.token}
+        }).then((response)=>{
+            console.log("Response from Add Card API: ", response.data.data)
+            alert("Cake is added to the cart")
+        }, (error)=>{
+            console.log("Error from Add Card API: ", error)
+        })
+    }
     return(
         <>
         <Space direction="horizontal" style={{paddingLeft:50 , paddingTop:50}}>
@@ -37,7 +57,7 @@ function CakeDetails(){
                 <li>Rating : {cakeDetails?.ratings}</li>
                 <li>Description : {cakeDetails?.description}</li>
                 <li>Likes : {cakeDetails?.likes}</li>
-                <Button type="primary">Add to Cart</Button>
+                <Button type="primary" onClick={handleAddToCart}>Add to Cart</Button>
             </ul>
         </Space>
         </>
