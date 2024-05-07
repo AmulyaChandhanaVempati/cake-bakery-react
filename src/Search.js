@@ -10,7 +10,7 @@ function Search(){
     var [searchresult,setSearchResults] = useState([])
     useEffect(()=>{
         getSearchresult()
-    },[])
+    },[searchresult])
 
     function getSearchresult(){
         axios({
