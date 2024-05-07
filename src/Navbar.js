@@ -3,14 +3,14 @@ import Login from "./Login"
 import { Link } from "react-router-dom"
 import { Button } from "antd"
 import { SearchOutlined } from "@ant-design/icons"
-import {  useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 
 function Navbar(){
     var searchText
-    function search(){
-        var navigate = useNavigate()
-        console.log("user issearching for" , searchText)
+    var navigate = useNavigate()
+    function handleSearch(){
+        console.log("user is searching for" , searchText)
         var url = "/search?q="+searchText
         navigate(url)
     }
@@ -24,10 +24,10 @@ function Navbar(){
         {label: "About Us"},
         {label: "Contact Us"},
         {label: (<Link to="/login"><Button type="primary">Login</Button></Link>)},
-        {icon:(
+        {label:(
             <>
             <input placeholder="search" onChange={handleSearchText}></input>
-            <SearchOutlined onClick={search}></SearchOutlined>
+            <Button type="primary" onClick={handleSearch}>Search</Button>
             </>
         )
 

@@ -37,7 +37,7 @@ function CakeDetails(){
                 <li>Rating : {cakeDetails?.ratings}</li>
                 <li>Description : {cakeDetails?.description}</li>
                 <li>Likes : {cakeDetails?.likes}</li>
-                <li><Button type="primary">Add to Cart</Button></li>
+                <Button type="primary">Add to Cart</Button>
             </ul>
         </Space>
         </>
